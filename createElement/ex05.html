@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=pt-br, initial-scale=1.0">
+    <title>Adicionar elementos em uma lista</title>
+</head>
+<body>
+    <ul id="lista">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+
+    <button onclick="myFunction()">Botão</button>
+
+    <script>
+        function myFunction(){
+            //Criar um li
+            const li = document.createElement('li');
+            //Texto do li
+            const texto_li = document.createTextNode('Water');
+            //Adicionar o texto do li no elemento li
+            li.appendChild(texto_li);
+            //Adicionar o elemento li na lista
+            document.getElementById('lista').appendChild(li);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função em javaScript</title>
+    <style>
+        #meuTexto{
+            width: 300px;
+            padding: 22px;
+            border-radius: 8px;
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <button id="meuBotao">Clique aqui</button>
+    <p id="meuTexto"></p>
+
+    <script>
+        document.getElementById('meuBotao').addEventListener('click', function(){
+            document.getElementById('meuTexto').textContent = 'Olá, este é o texto que aparece ao clicar no botão'
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            background-color: #c3c3c3;
+            border-radius: 18px;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>JavaScript</h2>
+    </div>
+
+    <script>
+        const paragrafo = document.createElement('p');
+        paragrafo.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iusto ipsa, corrupti deleniti voluptates commodi asperiores beatae?';
+
+        document.getElementById('box').appendChild(paragrafo);
+    </script>
+</body>
+</html>
