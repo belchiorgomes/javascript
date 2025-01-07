@@ -92,21 +92,32 @@
 
   <script>
     function adicionarTarefa() {
-        //let mensagem = "Tarefa adicionada com sucesso!";
+      //cria uma variavel com o valor de um texto
+        let mensagem = "Tarefa adicionada com sucesso!";
         //document.getElementById("mensagem").textContent = mensagem;
 
+        //cria a variavel inputTarefa, para acessar o valor do input
         let inputTarefa = document.getElementById("inputTarefa");
 
+        //cria a variavel tarefa e pega para ela o valor do inputTarefa
         let tarefa = inputTarefa.value;
 
-        document.getElementById("mensagem").textContent = tarefa;
+        //escreve no documento com o id mensagem o valor da variavel mensagem que foi declarada logo acima
+        document.getElementById("mensagem").textContent = mensagem;
 
+        //cria a variavel listaTarefas que no html e o ul
         let listaTarefas = document.getElementById("listaTarefas");
 
+        //cria um elemento li no documento html, ultilizando a variavel novaTarefa
         let novaTarefa = document.createElement("li");
 
+        //o elemento li do html vai ter o valor da variavel tarefa descrita logo acima
+        novaTarefa.textContent = tarefa;
+
+        //a varial listaTarefas que em htm e ul adiciona a variavel novaTarefa em html e li
         listaTarefas.appendChild(novaTarefa);
 
+        //limpa o ultimo valor da variavel inputTarefa
         inputTarefa.value = "";
     }
   </script>
