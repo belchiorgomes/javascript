@@ -93,7 +93,7 @@
   <script>
     function adicionarTarefa() {
       //cria uma variavel com o valor de um texto
-        let mensagem = "Tarefa adicionada com sucesso!";
+        let mensagemSucesso = "Tarefa adicionada com sucesso!";
         //document.getElementById("mensagem").textContent = mensagem;
 
         //cria a variavel inputTarefa, para acessar o valor do input
@@ -103,7 +103,7 @@
         let tarefa = inputTarefa.value;
 
         //escreve no documento com o id mensagem o valor da variavel mensagem que foi declarada logo acima
-        document.getElementById("mensagem").textContent = mensagem;
+        document.getElementById("mensagem").textContent = mensagemSucesso;
 
         //cria a variavel listaTarefas que no html e o ul
         let listaTarefas = document.getElementById("listaTarefas");
@@ -119,6 +119,11 @@
 
         //limpa o ultimo valor da variavel inputTarefa
         inputTarefa.value = "";
+
+        if (tarefa == "") {
+          let mensagemErro = "Digite uma tarefa para adicioná -la a sua lista de tarefas";
+          document.getElementById("mensagem").textContent = mensagemErro;
+        }
     }
   </script>
 </body>
