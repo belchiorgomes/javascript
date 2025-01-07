@@ -92,38 +92,44 @@
 
   <script>
     function adicionarTarefa() {
-      //cria uma variavel com o valor de um texto
-        let mensagemSucesso = "Tarefa adicionada com sucesso!";
+      
         //document.getElementById("mensagem").textContent = mensagem;
 
         //cria a variavel inputTarefa, para acessar o valor do input
         let inputTarefa = document.getElementById("inputTarefa");
 
         //cria a variavel tarefa e pega para ela o valor do inputTarefa
-        let tarefa = inputTarefa.value;
+        let tarefa = inputTarefa.value.trim();
 
-        //escreve no documento com o id mensagem o valor da variavel mensagem que foi declarada logo acima
-        document.getElementById("mensagem").textContent = mensagemSucesso;
+        let mensagem = document.getElementById("mensagem")
 
-        //cria a variavel listaTarefas que no html e o ul
-        let listaTarefas = document.getElementById("listaTarefas");
+        if (tarefa == "") {
+          let mensagemErro = "Digite uma tarefa para adicioná-la a sua lista de tarefas";
+          mensagem.textContent = mensagemErro;
+          mensagem.style.color = "#F50701";
+        }else {
+            //cria uma variavel com o valor de um texto
+            let mensagemSucesso = "Tarefa adicionada com sucesso!";
+            mensagem.textContent = mensagemSucesso;
+            mensagem.style.color = "#17F514";
 
-        //cria um elemento li no documento html, ultilizando a variavel novaTarefa
-        let novaTarefa = document.createElement("li");
+            //cria a variavel listaTarefas que no html e o ul
+            let listaTarefas = document.getElementById("listaTarefas");
 
-        //o elemento li do html vai ter o valor da variavel tarefa descrita logo acima
-        novaTarefa.textContent = tarefa;
+            //cria um elemento li no documento html, ultilizando a variavel novaTarefa
+            let novaTarefa = document.createElement("li");
 
-        //a varial listaTarefas que em htm e ul adiciona a variavel novaTarefa em html e li
-        listaTarefas.appendChild(novaTarefa);
+            //o elemento li do html vai ter o valor da variavel tarefa descrita logo acima
+            novaTarefa.textContent = tarefa;
+
+            //a varial listaTarefas que em htm e ul adiciona a variavel novaTarefa em html e li
+            listaTarefas.appendChild(novaTarefa);
+        }
 
         //limpa o ultimo valor da variavel inputTarefa
         inputTarefa.value = "";
 
-        if (tarefa == "") {
-          let mensagemErro = "Digite uma tarefa para adicioná -la a sua lista de tarefas";
-          document.getElementById("mensagem").textContent = mensagemErro;
-        }
+        
     }
   </script>
 </body>
