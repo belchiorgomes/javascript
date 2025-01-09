@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando a cor do paragrafo</title>
+</head>
+<body>
+    <p id="meuParagrafo">Este paragrafo vai ter a cor alterada</p>
+    <button id="meuBotao">Alterar cor</button>
+
+    <script>
+        const paragrafo = document.getElementById("meuParagrafo");
+        const botao = document.getElementById("meuBotao");
+
+        function alterarCor(){
+            paragrafo.style.color = "orange";
+        }
+
+        botao.addEventListener('click', alterarCor);
+    </script>
+</body>
+</html>
