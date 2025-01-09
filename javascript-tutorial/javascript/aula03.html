@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo insertBefore e insertAfter</title>
+    <style>
+        #minhaLista{
+            list-style-type: none;
+            width: 150px;
+        }
+
+        #minhaLista li{
+            width: 100%;
+            padding: 1.3rem;
+            border-radius: 1.2rem;
+            background-color: black;
+            color: white;
+            font-weight: bolder;
+            font-size: 1.4rem;
+            text-decoration: none;
+            text-align: center;
+            margin-block: 1.4rem;
+            transition: all .6s ease-in-out;
+        }
+
+        #minhaLista li:hover{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <ul id="minhaLista">
+        <li>item 1</li>
+        <li>item 3</li>
+    </ul>
+
+    <script>
+        const lista = document.getElementById("minhaLista");
+        const item3 = lista.querySelector("li:nth-child(2)");
+
+    //cria um novo item
+    const novoItem = document.createElement("li");
+    novoItem.textContent = "item 2";
+
+    //insere o novo item antes do item 3
+    lista.insertBefore(novoItem, item3);
+
+    //crie outro novo item
+    const outroNovoItem = document.createElement("li");
+    outroNovoItem.textContent = "item 4";
+
+    //insere o novo item após o item 3
+    lista.appendChild(outroNovoItem);
+    </script>
+</body>
+</html>

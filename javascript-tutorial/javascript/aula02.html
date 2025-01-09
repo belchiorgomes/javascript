@@ -6,18 +6,25 @@
     <title>Exibir texto com JavaScript</title>
 </head>
 <body>
+    <button id="meuBotao">clique aqui</button>
     <p id="meuParagrafo">Este parágrafo será alterado</p>
 
     <script>
         let paragrafo = document.getElementById("meuParagrafo");
 
-        //Altera o texto do paragrafo
-        paragrafo.innerHTML = "<b>Texto em Negrito</b>inserido com JavaScript";
-
         //Cria um novo elemento
         let novoTitulo = document.createElement("h1");
         novoTitulo.textContent = "Um novo título";
         document.body.appendChild(novoTitulo);
+
+        const botao = document.getElementById("meuBotao");
+
+        function mudarTexto(){
+            //Altera o texto do paragrafo
+            paragrafo.innerHTML = "<b>Texto em Negrito</b>inserido com JavaScript";
+        }
+
+        botao.addEventListener('click', mudarTexto);
     </script>
 </body>
 </html>
