@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir texto com JavaScript</title>
+</head>
+<body>
+    <p id="meuParagrafo">Este parágrafo será alterado</p>
+
+    <script>
+        let paragrafo = document.getElementById("meuParagrafo");
+
+        //Altera o texto do paragrafo
+        paragrafo.innerHTML = "<b>Texto em Negrito</b>inserido com JavaScript";
+
+        //Cria um novo elemento
+        let novoTitulo = document.createElement("h1");
+        novoTitulo.textContent = "Um novo título";
+        document.body.appendChild(novoTitulo);
+    </script>
+</body>
+</html>

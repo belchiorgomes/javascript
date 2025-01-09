@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escrevendo no DOM JavaScript</title>
+</head>
+<body>
+    <button id="meuBotao">Clique aqui</button>
+    <p id="meuParagrafo">Este paragrafo será alterado</p>
+
+    <script>
+        const botao = document.getElementById("meuBotao");
+        const paragrafo = document.getElementById("meuParagrafo");
+
+        //Função alterar o texto do paragrafo
+        function mudarTexto(){
+            paragrafo.textContent = "Texto alterado!";
+        }
+
+        botao.addEventListener('click', mudarTexto);
+    </script>
+</body>
+</html>
