@@ -18,3 +18,10 @@ console.log(--num2);
 let a = 5;
 a += 5; // +=, -=, *=, /=, %=
 console.log(a);
+
+// Operador Ternário
+
+let idade = 18;
+//                condição ? expressão_se_verdadeiro : expressão_se_falso
+let mensagem = idade >= 18 ? "Pessoa maior de idade!" : "Pessoa menor de idade!";
+console.log(mensagem);
