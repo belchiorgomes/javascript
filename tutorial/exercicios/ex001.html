@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando texto com JavaScript</title>
+</head>
+<body>
+    <p id="paragrafo01">Meu primeiro paragrafo</p>
+    <p id="paragrafo02">Alterando texto</p>
+
+    <script>
+        // textContent
+        const paragrafo01 = document.getElementById("paragrafo01");
+        paragrafo01.textContent = "Alterei o texto";
+
+        // innerHTML
+        const paragrafo02 = document.getElementById("paragrafo02");
+        paragrafo02.innerHTML = "Alterar o texto usando <strong> innerHTML </strong>.";
+    </script>
+</body>
+</html>

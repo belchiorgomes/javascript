@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar um novo paragrafo</title>
+</head>
+<body>
+
+  <script>
+    const elementoPai = document.querySelector("body");
+    const novoElemento = document.createElement("p");
+    novoElemento.innerHTML = "<h1>Novo elemento</h1>";
+    elementoPai.appendChild(novoElemento);
+
+    elementoPai.style.backgroundColor = "#c2c2c2";// Adicionar um estilo ao corpo da pagina
+  </script>
+</body>
+</html>
