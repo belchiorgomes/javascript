@@ -29,8 +29,8 @@
         }
 
         .container .carousel .card{
-            width: 180px;
-            height: 230px;
+            width: 80px;
+            height: 130px;
             border: 2px solid black;
             border-radius: 1.3rem;
             overflow: hidden;
@@ -49,24 +49,26 @@
             z-index: -1;
             width: 100vw;
             height: 100vh;
-            background-image: url("imagem/naruto01.jpg");
+            background-image: url("imagem/foto04.jpg");
             background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="carousel">
-            <div class="card active" data-image="imagem/naruto01.jpg">
-                <img src="imagem/naruto01.jpg" alt="Naruto 01">
+            <div class="card active" data-image="imagem/foto01.jpg">
+                <img src="imagem/foto01.jpg" alt="foto01">
             </div>
 
-            <div class="card" data-image="imagem/naruto02.jpg">
-                <img src="imagem/naruto02.jpg" alt="Naruto 02">
+            <div class="card" data-image="imagem/foto02.jpg">
+                <img src="imagem/foto02.jpg" alt="foto02">
             </div>
 
-            <div class="card" data-image="imagem/naruto01.jpg">
-                <img src="imagem/naruto01.jpg" alt="Naruto 01">
+            <div class="card" data-image="imagem/foto04.jpg">
+                <img src="imagem/foto04.jpg" alt="foto04">
             </div>
         </div>
 
@@ -76,6 +78,17 @@
 
     <div class="imagem-fundo"></div>
 
-    <script></script>
+    <script>
+        const cards = document.querySelectorAll(".card");
+        const imagemFundo = document.querySelector(".imagem-fundo");
+
+        cards.forEach(card => {
+            card.addEventListener("click", () =>{
+                const image = card.dataset.image;
+                imagemFundo.style.backgroundImage = `url(${image})`;
+                imagemFundo.classList.add('active')
+            })
+        })
+    </script>
 </body>
 </html>
