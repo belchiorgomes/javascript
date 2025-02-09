@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container .carousel{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .container .carousel .card{
+            width: 180px;
+            height: 230px;
+            border: 2px solid black;
+            border-radius: 1.3rem;
+            overflow: hidden;
+        }
+
+        .container .carousel .card img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .imagem-fundo{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100vw;
+            height: 100vh;
+            background-image: url("imagem/naruto01.jpg");
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="carousel">
+            <div class="card active" data-image="imagem/naruto01.jpg">
+                <img src="imagem/naruto01.jpg" alt="Naruto 01">
+            </div>
+
+            <div class="card" data-image="imagem/naruto02.jpg">
+                <img src="imagem/naruto02.jpg" alt="Naruto 02">
+            </div>
+
+            <div class="card" data-image="imagem/naruto01.jpg">
+                <img src="imagem/naruto01.jpg" alt="Naruto 01">
+            </div>
+        </div>
+
+        <button class="prev-button">Anteriot</button>
+        <button class="next-button">Próximo</button>
+    </div>
+
+    <div class="imagem-fundo"></div>
+
+    <script></script>
+</body>
+</html>

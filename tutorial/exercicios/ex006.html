@@ -1,61 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alterando imagem com JavaScript</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>Mudar Imagem de Fundo</title>
+<style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body{
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 2rem;
+    body{
+      height: 100vh;
+    }
 
-            background-image: url(imagem/naruto02.jpg);
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+    .card-container{
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 20px;
+      padding: 20px;
+    }
 
-        .btn{
-            width: 200px;
-            height: 125px;
-            border-radius: 8px;
-            border: 2px solid #000;
-            margin-bottom: 1.3rem;
-            overflow: hidden;
-        }
+    .card{
+      width: 200px;
+      height: 250px;
+      border: 1px solid black;
+      border-radius: 1.3rem;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
 
-        .btn > img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
+    .card img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .imagemFundo{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      z-index: -1;
+      transition: opacity 0.5s;
+      opacity: 0;
+    }
+
+    .imagemFundo.active{
+      opacity: 1;
+    }
+</style>
 </head>
 <body>
-    <button class="btn" id="btn01">
-        <img src="imagem/naruto01.jpg" alt="imagem naruto 01">
-    </button>
+    <div class="card-container">
+      <div class="card" data-image="Imagem/naruto01.jpg">
+        <img src="imagem/naruto01.jpg" alt="Imagem 01">
+      </div>
 
-    <button class="btn" id="btn02">
-        <img src="imagem/naruto02.jpg" alt="imagem naruto 02">
-    </button>
+      <div class="card" data-image="imagem/naruto02.jpg">
+        <img src="imagem/naruto02.jpg" alt="Imagem 01">
+      </div>
+    </div>
+
+    <div class="imagemFundo"></div>
 
     <script>
-        const btn = document.querySelector("button");
-        const body = document.querySelector("body");
+      const cards = document.querySelectorAll(".card");
+      const imagemFundo = document.querySelector(".imagemFundo");
 
-        btn.addEventListener("click", function(){
-            body.style.backgroundImage = "imagem/naruto01.jpg"
+      cards.forEach(card => {
+        card.addEventListener("click", () => {
+          const image = card.dataset.image;
+          imagemFundo.style.backgroundImage = `url(${image})`;
+          imagemFundo.classList.add('active')
         })
+      })
     </script>
 </body>
 </html>
