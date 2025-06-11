@@ -43,5 +43,7 @@ const nome = (nome) => {
 }
 nome('Maria');
 
+const dizerOlá = () => console.log('Olá');
+
 const soma3 = x => x + x;
 console.log(soma3(2));
