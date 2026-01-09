@@ -9,12 +9,18 @@
     <h1>Soma de números</h1>
 
     <script>
-        let numero1 = parseFloat(prompt('Digite um número '));
-        let numero2 = parseFloat(prompt('Digite outro número '));
-        let soma = numero1 + numero2;
+        let nota01 = parseFloat(prompt('Digite a primeira nota '));
+        let nota02 = parseFloat(prompt('Digite a segunda nota '));
+        let soma = nota01 + nota02;
+        let media = soma / 2;
 
-        alert('A soma entre ' + numero1 + " mais " + numero2 + " e igual a " + soma);
-        alert('A soma é' + (numero1 + numero2));
+        if(media > 4){
+            alert('Aluno conseguiu a media ' + media + ' e esta aprovado');
+        }else{
+            alert('Aluno conseguiu a media ' + media + ' e esta reprovado');
+        }
+
+        alert('Fim do programa');
     </script>
 </body>
 </html>
